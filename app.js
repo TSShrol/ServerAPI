@@ -40,7 +40,7 @@ ON region.climate_zone_id=climate_zone.id`;
     // Getting the 'res' from the database and sending it to our route. This is were the data is.
     region = JSON.stringify(result);
     response.send(region);
-    // console.log(typeof region);
+    console.log(typeof region);
   });
 });
 
