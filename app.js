@@ -11,12 +11,18 @@ const pool = mysql.createPool({
 });
 
 const app = express();
+app.use((_req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+  next();
+});
 app.use(express.json());
 app.use(
   express.urlencoded({
     extended: true,
   })
 );
+
 
 app.get("/", (req, res) => {
   res.json({ message: "ok" });
@@ -40,7 +46,7 @@ ON region.climate_zone_id=climate_zone.id`;
     // Getting the 'res' from the database and sending it to our route. This is were the data is.
     region = JSON.stringify(result);
     response.send(region);
-    console.log(typeof region);
+    // console.log(typeof region);
   });
 });
 
