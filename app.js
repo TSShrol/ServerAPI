@@ -4,9 +4,9 @@ const mysql = require("mysql2");
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST || "sql8.freesqldatabase.com",
-  user: process.env.DB_USERNAME || "sql8628575",
-  password: process.env.DB_PASSWORD || "7PUPSfN5p9",
-  database: process.env.DATABASE || "sql8628575",
+  user: process.env.DB_USERNAME || "sql8627547",
+  password: process.env.DB_PASSWORD || "xAbzcI18Nf",
+  database: process.env.DATABASE || "sql8627547",
   port: process.env.DB_PORT || 3306,
 });
 
